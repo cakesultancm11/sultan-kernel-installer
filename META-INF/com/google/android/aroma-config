@@ -1,6 +1,6 @@
-ini_set("kernel_revision", "v1.8.6");
-ini_set("rom_name", "Sultan kernel Hercules" + " " + "v1.8.6");
-ini_set("rom_version", "Sultan kernel Hercules v1.8.6 for KitKat");
+ini_set("kernel_revision", "v2.0");
+ini_set("rom_name", "Cake Kernel for Hercules" + " " + "v2.0");
+ini_set("rom_version", "Cake Kernel v2.0 for KitKat");
 ini_set("rom_author", "Aroma created by iba21, axetilen & Ghost (modified and maintained by Sultanxda)");
 ini_set("rom_device", "Samsung Hercules SGH-T989");
 
@@ -36,8 +36,8 @@ selectbox(
   "icons/apps",
   "kernel.prop",
 
-  "Customize and install Sultan kernel"," ",1,
-  "Install Sultan kernel (no customization)","Removes old kernel options chosen with this installer and installs only the kernel",0
+  "Customize and install Cake kernel"," ",1,
+  "Install Cake kernel (no customization)","Removes old kernel options chosen with this installer and installs only the kernel",0
 );
 
 if prop("kernel.prop","selected.0") == "1" then
@@ -46,10 +46,96 @@ selectbox(
   "Enable Sweep2Wake?",
   "Press next if you are unsure",
   "icons/apps",
-  "sweep.prop",
+  "s2w.prop",
 
   "Yes"," ",0,
   "No"," ",1
+);
+
+selectbox(
+  "Enable Sweep2Sleep?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "s2s.prop",
+
+  "Yes"," ",0,
+  "No"," ",1
+);
+
+selectbox(
+  "Enable Sweep2Wake Leniency?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "lenient.prop",
+
+  "Yes","Only Require 1st and 4th Keys",0,
+  "No"," ",1
+);
+
+selectbox(
+  "Enable DoubleTap2Wake?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "dt2w.prop",
+
+  "Menu"," ",0,
+  "Home"," ",1,
+  "Back"," ",0,
+  "Search"," ",0,
+  "Disabled"," ",0
+);
+
+selectbox(
+  "Enable DoubleTap2Sleep?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "dt2s.prop",
+
+  "Menu"," ",0,
+  "Home"," ",1,
+  "Back"," ",0,
+  "Search"," ",0,
+  "Disabled"," ",0
+);
+
+selectbox(
+  "Enable Fsync?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "fsync.prop",
+
+  "Yes"," ",1,
+  "No"," ",0
+);
+
+selectbox(
+  "Enable MMC CRC?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "crc.prop",
+
+  "Yes"," ",0,
+  "No"," ",1
+);
+
+selectbox(
+  "Enable Gentle Fair Sleepers?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "gfs.prop",
+
+  "Yes"," ",0,
+  "No"," ",1
+);
+
+selectbox(
+  "Enable Arch Power?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "ap.prop",
+
+  "Yes"," ",1,
+  "No"," ",0
 );
 
 selectbox(
@@ -86,14 +172,27 @@ selectbox(
 );
 
 selectbox(
+  "Maximum GPU 2D frequency",
+  "Press next if you are unsure",
+  "icons/apps",
+  "gpu2d.prop",
+
+  "200MHz","Stock",1,
+  "228MHz","Overclock",0,
+  "266MHz","Overclock",0
+);
+
+selectbox(
   "CPU thermal throttling",
   "Press next if you are unsure",
   "icons/apps",
   "thermal.prop",
 
-  "Strict thermal thresholds","Worst performance but phone stays cool",0,
+  "Super Strict thermal thresholds","Worst performance but phone stays cool",0,
+  "Strict thermal thresholds","Worse performance but phone stays cool",0,
   "Balanced thermal thresholds","Kernel default",1,
-  "Relaxed thermal thresholds","Best performance but phone may get very hot",0
+  "Relaxed thermal thresholds","Better performance but phone may get very hot",0,
+  "Super Relaxed thermal thresholds","Best performance but phone may get very hot",0
 );
 
 selectbox(
