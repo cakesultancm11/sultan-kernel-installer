@@ -1,0 +1,183 @@
+ini_set("kernel_revision", "v1.8.6");
+ini_set("rom_name", "Sultan kernel Hercules" + " " + "v1.8.6");
+ini_set("rom_version", "Sultan kernel Hercules v1.8.6 for KitKat");
+ini_set("rom_author", "Aroma created by iba21, axetilen & Ghost (modified and maintained by Sultanxda)");
+ini_set("rom_device", "Samsung Hercules SGH-T989");
+
+ini_set("force_colorspace","bgra");
+splash(4000, "sample");
+theme("ics");
+calibrate("1.6834","18","0.9457","25");
+
+viewbox(
+    "Welcome",
+    "\n\n\n\n\n"+
+    "You're about to flash\n"+
+    ini_get("rom_name") + " " + ini_get("rom_author") +  
+    "\n\n\n"+
+    "  Version: <#080>" + ini_get("rom_version") + "</#>\n"+
+    "  Device: <#080>" + ini_get("rom_device") + "</#>\n\n\n"+
+    "Press Next to continue the installation...",
+    "icons/info"
+);
+
+textbox(
+  "Changelog",
+  "Kernel Changelog",
+  "icons/info",
+  readfile_aroma("changelogs.txt")
+);
+
+appendvar("installmsg","\n\nPlease Select Installation Type Below:");
+
+selectbox(
+  "Installation",
+  "What would you like to do?",
+  "icons/apps",
+  "kernel.prop",
+
+  "Customize and install Sultan kernel"," ",1,
+  "Install Sultan kernel (no customization)","Removes old kernel options chosen with this installer and installs only the kernel",0
+);
+
+if prop("kernel.prop","selected.0") == "1" then
+
+selectbox(
+  "Enable Sweep2Wake?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "sweep.prop",
+
+  "Yes"," ",0,
+  "No"," ",1
+);
+
+selectbox(
+  "Maximum CPU frequency",
+  "Press next if you are unsure",
+  "icons/apps",
+  "maxfreq.prop",
+
+  "1188MHz"," ",0,
+  "1296MHz"," ",0,
+  "1350MHz"," ",0,
+  "1404MHz"," ",0,
+  "1458MHz"," ",0,
+  "1512MHz"," ",1,
+  "1566MHz"," ",0,
+  "1620MHz"," ",0,
+  "1674MHz"," ",0,
+  "1728MHz"," ",0,
+  "1782MHz"," ",0,
+  "1836MHz"," ",0
+);
+
+selectbox(
+  "Maximum GPU frequency",
+  "Press next if you are unsure",
+  "icons/apps",
+  "gpu.prop",
+
+  "200MHz"," ",0,
+  "228MHz"," ",0,
+  "266MHz","Stock",1,
+  "300MHz","Overclock",0,
+  "320MHz","Overclock - some devices cannot handle this",0
+);
+
+selectbox(
+  "CPU thermal throttling",
+  "Press next if you are unsure",
+  "icons/apps",
+  "thermal.prop",
+
+  "Strict thermal thresholds","Worst performance but phone stays cool",0,
+  "Balanced thermal thresholds","Kernel default",1,
+  "Relaxed thermal thresholds","Best performance but phone may get very hot",0
+);
+
+selectbox(
+  "Display undervolt",
+  "Please select the display UV you want",
+  "icons/apps",
+  "panel.prop",
+
+  "No UV","Display voltage: 3000mV - Stock Samsung",1,
+  "50mV UV","Display voltage: 2950mV",0,
+  "100mV UV","Display voltage: 2900mV",0,
+  "150mV UV","Display voltage: 2850mV",0,
+  "200mV UV","Display voltage: 2800mV",0,
+  "250mV UV","Display voltage: 2750mV",0,
+  "300mV UV","Display voltage: 2700mV",0,
+  "350mV UV","Display voltage: 2650mV",0,
+  "400mV UV","Display voltage: 2600mV",0,
+  "450mV UV","Display voltage: 2550mV",0,
+  "500mV UV","Display voltage: 2500mV",0
+);
+
+selectbox(
+  "BLN blink timeout",
+  "BLN will stop blinking on its own after this amount of time",
+  "icons/apps",
+  "bln.prop",
+
+  "10 minutes","Kernel default",1,
+  "15 minutes","",0,
+  "30 minutes","",0,
+  "1 hour","",0,
+  "Never","BLN will not stop blinking on its own",0
+);
+
+selectbox(
+  "Force low-power camera flash",
+  "Does your phone crash when taking pictures with flash?",
+  "icons/apps",
+  "lp_flash.prop",
+
+  "Yes","My phone crashes when taking pictures with flash",0,
+  "No","My phone does not crash",1
+);
+endif;
+
+viewbox(
+  "Ready to install",
+  "All necessary information has been collected for installation.\n\n"+
+  "Press 'Next' to begin installation...",
+  "icons/info"
+);
+
+checkviewbox(
+   "Ready?",
+   "---"+
+   "Press 'Next' to begin installation",
+   "icons/info",
+   "Reboot the device after installation?",
+   "0",
+   "reboot_it"
+);
+
+install(
+  "Installing",
+  "Installing " + ini_get("rom_name") + 
+  "...\nPlease wait until the installation finishes.",
+  "icons/install"
+);
+
+# Set Next Text fo Finish
+ini_set("text_next", "Finish");
+if getvar("reboot_it")=="1" then
+	ini_set("text_next", "Reboot");
+endif;
+
+viewbox(
+   "Installation Completed",
+   "<#080>Congratulations!</#>\n\n"+
+   "The kernel has been successfully installed.\n\n"+
+   "Press Finish and reboot your phone.\n\nEnjoy!",
+   "icons/info"
+);
+
+# Check if reboot checkbox was checked
+if getvar("reboot_it")=="1" then
+	reboot("onfinish");
+endif;
