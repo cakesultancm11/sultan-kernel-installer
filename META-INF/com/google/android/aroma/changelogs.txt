@@ -1,16 +1,18 @@
-v2.0 on Dec 28, 2015
+v2.0 on Dec 30, 2015
 *Renamed to Cake
 *Lowered Boost Duration
 *Sysfs for Vibration Intensity
+*Vibrator at 50% by Default
 *Voltage Control for GPU
 *CPU Voltage Control Fixed
 *CPU & GPU Undervolted
 *Userspace CPU Toggle
 *BCMDHD Shows Low Signals
 *KCAL
-*BFQ
 *Backlight Dimmer
+*BFQ
 *Tweaked Deadline, CFQ, and BFQ
+*Use BFQ by Default
 *Disable add_random
 *Dynamic Readahead
 *Gentle Fair Sleepers Sysfs
