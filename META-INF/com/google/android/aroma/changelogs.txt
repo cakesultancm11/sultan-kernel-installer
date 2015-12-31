@@ -1,4 +1,4 @@
-v2.0 on Dec 30, 2015
+v2.0 on Jan 2, 2016
 *Renamed to Cake
 *Lowered Boost Duration
 *Sysfs for Vibration Intensity
@@ -30,6 +30,7 @@ v2.0 on Dec 30, 2015
 *Sweep2Sleep
 *1.5 Second Sweep2Wake Timeout
 *DoubleTap2Wake/Sleep
+*Built with UBER GCC 4.9
 
 v1.8.6 on May 16, 2015:
 *Fixed boost duration calculation
