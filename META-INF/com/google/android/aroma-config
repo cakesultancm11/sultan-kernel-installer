@@ -201,7 +201,7 @@ selectbox(
   "icons/apps",
   "panel.prop",
 
-  "No UV","Display voltage: 3000mV - Stock Samsung",1,
+  "No UV","Display voltage: 3000mV - Stock Samsung",0,
   "50mV UV","Display voltage: 2950mV",0,
   "100mV UV","Display voltage: 2900mV",0,
   "150mV UV","Display voltage: 2850mV",0,
@@ -211,7 +211,7 @@ selectbox(
   "350mV UV","Display voltage: 2650mV",0,
   "400mV UV","Display voltage: 2600mV",0,
   "450mV UV","Display voltage: 2550mV",0,
-  "500mV UV","Display voltage: 2500mV",0
+  "500mV UV","Display voltage: 2500mV",1
 );
 
 selectbox(
