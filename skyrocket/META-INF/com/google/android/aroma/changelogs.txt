@@ -1,0 +1,301 @@
+v2.0a on Jan 5, 2016
+*Undervolt Panel by Default
+*Dim Backlight by Default
+
+v2.0 on Jan 2, 2016
+*Renamed to Cake
+*Lowered Boost Duration
+*Sysfs for Vibration Intensity
+*Vibrator at 50% by Default
+*Voltage Control for GPU
+*CPU Voltage Control Fixed
+*CPU & GPU Undervolted
+*Userspace CPU Toggle
+*BCMDHD Shows Low Signals
+*KCAL
+*Backlight Dimmer
+*BFQ
+*Tweaked Deadline, CFQ, and BFQ
+*Use BFQ by Default
+*Disable add_random
+*Dynamic Readahead
+*Gentle Fair Sleepers Sysfs
+*Arch Power Sysfs
+*CRC Sysfs
+*2D GPU Overclocking
+*Simple GPU Governor
+*Fsync Toggle Sysfs
+*Logger Toggle Sysfs
+*PVS Number Sysfs
+*Enhanced BLN Tweaks
+*More Low Power Flash Scenarios
+*O3 Kernel
+*Sweep2Wake Leniency
+*Sweep2Sleep
+*1.5 Second Sweep2Wake Timeout
+*DoubleTap2Wake/Sleep
+*Built with UBER GCC 4.9
+
+v1.8.6 on May 16, 2015:
+*Fixed boost duration calculation
+*Adapted Lollipop kernel to KitKat
+
+v1.8.5 on May 15, 2015:
+*Added option to always enable low-power flash
+*Updated core logic of the CPU input boost driver
+
+v1.8.4 on April 18, 2015:
+*Reverted to CAF jb_2.5 GPU drivers
+*Small improvements to CPU input boost
+*Fixed a small bug in EBLN
+
+v1.8.3 on March 18, 2015:
+*Fixed 2D GPUs (fixes reboots in Gallery and other random apps)
+*CPU input boost is now intelligent:
+-CPU input boost automagically decides which CPU cores to boost
+-Decides which frequency to boost to
+-Decides how long to boost the CPU
+
+v1.8.2 on March 4, 2015:
+*Upgraded GPU (KGSL) drivers to CAF LA.AF.1.1_rb1.12
+*Increased GPU memory by 4x (fixes black screen and subsequent force close when trying to play some games)
+
+v1.8.1B on February 28, 2015:
+*Synced with ROM changes (the kernel itself is still exactly the same as v1.8.1)
+
+v1.8.1 on February 26, 2015:
+*Enabled MMC deferred resume feature (saves power)
+
+v1.8.0 on February 12, 2015:
+*Merged entire kernel with CAF jb_1.9.6
+*Removed some garbage
+*Added NTFS support
+
+v1.7.0 on February 4, 2015:
+*Enhanced BLN now switches to the low-power always-on mode after the blink timeout expires (it stops blinking and keeps the backlights on, while removing the BLN wakelock to save power)
+
+v1.6.9 on February 2, 2015:
+*Actually un-broke BLN (mega-derp)
+*Updated some net drivers from Grouper's Lollipop kernel
+
+v1.6.8 on January 31, 2015:
+*Un-broke BLN (derp)
+
+v1.6.7 on January 30, 2015:
+*Fixed potential disruptions in enhanced BLN (the LEDs will always blink at a constant rate now)
+
+v1.6.6 on January 25, 2015:
+*Made BLN blink timeout configurable
+*Fixed null pointer dereference in keypad driver
+
+v1.6.5 on January 23, 2015:
+*Reverted CAF LA.AF.1.1_rb1.7 audio backport
+*Increased vmalloc reserve from 432MB to 512MB
+*Added some upstream Linux network patches
+*Removed lots of garbage
+*841MB of RAM
+*Wrote new BLN driver from scratch named Enhanced BLN
+*Added always-on mode to BLN (this keeps the backlights on forever with no timeout, and it does not make them blink; when always-on mode is enabled from Settings, BLN does not use a wakelock and the main BLN work function is suspended)
+*Other Enhanced BLN features:
+-Configurable on/off blink speed (go to Settings->Display & lights->Notification light to configure it)
+-Supports different speeds for the LEDs to turn on and off (ex: you can have the lights turn on for 2 sec and then off for 1 sec)
+-Properly stops blinking when it is supposed to
+
+v1.6.2B on January 9, 2015:
+*Synced with Jan. 8th ROM changes (the kernel itself is still v1.6.2)
+
+v1.6.2 on January 7, 2015:
+*WiFi is a module again
+*Added back support for loadable modules
+*Reverted wireless stack backport from the Galaxy S5 (didn't do anything useful)
+
+v1.6.1 on January 3, 2015:
+*Removed KSM (our CPU literally don't got time fo dis)
+*Added kernel-based thermal mitigation driver
+*Fixed minfreq getting stuck to the input boost frequency (1134MHz) when the user tried to modify the minfreq during a boost
+
+v1.6.0 on January 2, 2015:
+*Updated Ion memory drivers from CAF LA.AF.1.1_rb1.7
+*Updated audio drivers from CAF LA.AF.1.1_rb1.7
+*Added KSM support
+*Increased Ondemand 2-phase frequency to 1134MHz
+*Disabled kernel virtual terminal (tty0 device)
+*Fixed camcorder bus overflow (this fixes the weird glitches that appeared in recorded videos)
+*Updated xt_qtaguid from CAF LA.AF.1.1_rb1.7
+*Fixed potential bugs in the CPU Input Boost driver
+*Disabled early-suspend crap in the MDP driver (screen turns on faster now)
+*WiFi is no longer built as a module (it's built directly into the kernel image)
+*Disabled loadable module support (improves security)
+*Backported wireless stack from Galaxy S5 kernel
+*Updated WiFi drivers for compatibility with new wireless stack
+
+v1.5.1 on December 17, 2014:
+*Fixed screen not turning on
+*Fixed mobile data
+
+v1.5.0 on December 14, 2014:
+*Added support for Lollipop
+
+v1.4.7 on December 1, 2014:
+*Actually fixed green video bug
+*Fixed screen recording
+*Fixed memory leak in framebuffer drivers
+*Screen turns on faster now
+*Fixed buffer overflow in net drivers (upstream Linux patch; credit to jasowang)
+*Fixed net-related random reboots (upstream Linux patch; credit to edumazet)
+
+v1.4.6 on November 24, 2014:
+*Re-enabled some extra debugging information (shouldn't affect performance)
+*Overhauled CPU Input Boost driver (fixed bugs and made it more robust)
+
+v1.4.5 on November 22, 2014:
+*Actually enabled CPU Input Boost (I forgot to enable it in the previous build... well this is awkward)
+*Disabled input boosting when the device is suspended (fixes nasty kernel warnings and battery drain)
+*Fixed potential deadlock in CPU Input Boost
+
+v1.4.4 on November 21, 2014:
+*Reverted audio driver upgrade
+*Fixed green-video bug (probably)
+*840MB of RAM
+*Removed CPU-boost framework
+*Implemented CPU Input Boost
+*CPU Input Boost makes the device feel much smoother and faster
+*Added back touchscreen/touchkey mutex locks from dferg
+
+v1.4.3 on November 4, 2014:
+*Re-enabled NETFILTER_XT_MATCH_QTAGUID, and as a result:
+-the Data Usage option in Settings is fixed
+-the Afwall app is fixed
+
+v1.4.2 on October 30, 2014:
+*Created new low-power flash mode to fix hard shutdowns when taking pictures with flash on low battery (low-power flash is automatically enabled at 35% battery)
+*Fixed bug in CPU-boost framework where 2nd CPU core remained boosted forever
+*Min frequency of CPU1 is now synced with CPU0 (minfreq of 2nd CPU core will always be the same as 1st CPU core)
+
+v1.4.1 on October 11, 2014:
+*Reverted CAF kk_2.7-stable Ion memory driver upgrade (kernel now uses CAF jb_1.9.6 Ion drivers)
+*Reverted CAF kk_2.7-stable GPU driver upgrade (kernel now uses CAF jb_2.5 GPU drivers)
+*Fixed max CPU frequency not sticking on 2nd CPU core (maxfreq of 2nd core was always stuck at 1512MHz)
+*Max frequency of CPU1 is now synced with CPU0 (maxfreq of 2nd CPU core will always be the same as 1st CPU core)
+
+v1.4.0 on October 5, 2014:
+*Backported newest-available audio drivers from CAF kk_2.7-stable
+*Backported newest-available GPU drivers from CAF kk_2.7-stable
+*Backported newest-available Ion memory drivers from CAF kk_2.7-stable
+*Fixed reboots when using AdAway to redirect ads to localhost (thanks to luxkore)
+*CPU-boosting is disabled when proximity sensor is open (saves battery during phone calls)
+
+v1.3.8 on September 29, 2014:
+*Added back 27MHz GPU slumber frequency (better battery life)
+*CPU is boosted 100ms earlier when waking device from sleep
+
+v1.3.7 on September 25, 2014:
+*CPU-boost framework now respects the maxfreq
+
+v1.3.6 on September 25, 2014:
+*Added Sweep2Wake (disabled by default; enable it with the Aroma installer)
+*Added touchscreen/keypad fixes from dferg
+*Minor misc. driver updates from Samsung SGH-T989_NA_JB_Opensource
+*Implemented CPU-boost framework (read the FAQ to understand what this is)
+
+v1.3.5 on September 23, 2014:
+*Added support for Hercules (SGH-T989)
+*Added brick-bug fix
+*Properly disabled 2D GPU cores
+
+v1.3.4 on July 15, 2014:
+*Kernel is no longer built with all symbols (kernel isn't suffering from random reboots so I can do this; kernel is much lighter as a result)
+*Rear-camera JPEG picture quality is always set to 100% (no JPEG compression)
+*Cleaned out some useless drivers
+*Enabled release fence for our LCDC panel (smoother graphics)
+*Downgraded GPU drivers from CAF kk_2.7 to CAF jb_2.5 (this fixes the constant-force-closing issue)
+
+v1.3.3 on June 27, 2014:
+*Fixed display underrun, smoother graphics as a result (Steve Kondik)
+*Fixed cable-type 6 charger wakelock, also known as "vbus_present" wakelock
+*Device now goes into deep sleep while charging
+
+v1.3.2 on June 20, 2014:
+*Vibetonz driver is no longer a module
+*Added CD-ROM emulation support (FrozenCow)
+*n_tty: Fix n_tty_write crash when echoing in raw mode (Peter Hurley)
+*Reverted minor updates to GPU drivers that caused the GPU device to run out of memory
+*Fixed cable-type 6 charging wakelocks (cable-type 6 = unknown charger)
+*Fixed slow charging speed with some chargers
+*Enabled ultrafast charge (up to ~1200mA) for USB
+*Increased max current for AC charging to ~1200mA (it was 900mA before)
+
+v1.3.1 on June 14, 2014:
+*Fixed major logic flaw in my mdp hack to fix graphical glitches
+*Fixed occasional long delay when waking screen from sleep
+
+v1.3.0 on June 14, 2014:
+*Added back display undervolting
+*Fixed graphical glitches once and for all
+*Increased Ion SF heap size by 16MB (needed to fix graphical glitches)
+*831MB of RAM
+*Increased GPU memory (fixes random freezes and app force closes)
+*Minor GPU driver update from CAF
+*Backported latest WiFi drivers (v1.88.64) from Samsung Galaxy S5 kernel
+*Backported newer wireless stack from Google Nexus 7 2012 kernel
+*Fixed WiFi direct
+*Fixed WiFi hotspot
+
+v1.2.1 on June 9, 2014:
+*Removed panel-undervolt interface (nobody seemed to care for it anyway)
+*Made sure that ion_map_iommu() is successful regardless of domain number (this should eliminate all iommu-related display glitches)
+
+v1.2.0 on June 8, 2014:
+*Increased Ion camera heap size by 6MB (this fixes camera force closes)
+*Increased Ion multimedia heap size by 10MB
+*Userspace has 847MB of RAM
+*Ported Bluetooth drivers from CAF jb_1.9.6
+*Ported Bluetooth stack from CAF jb_1.9.6
+*Ported Bluetooth low-power serial driver from my HTC Sensation kernel
+*Removed a hack that allowed the kernel to boot on other ROMs
+
+v1.1.1 on June 7, 2014:
+*Finally fixed graphical glitches
+*Fixed display undervolting (it wasn't applying the correct voltage)
+
+v1.1.0 on June 7, 2014:
+*Backported newer framebuffer drivers from CAF kk_2.7-stable
+*Smoother graphics due to the framebuffer driver upgrade
+*Updated GPU drivers from CAF kk_2.7-stable
+*Increased Ion SF heap size by 7MB
+*Userspace has 863MB of RAM
+
+v1.0.5B on May 15, 2014:
+*Added display undervolting
+*Undervolt the display by up to 500mV
+
+v1.0.5 on May 15, 2014:
+*Synced all references to iommu in the framebuffer drivers to CAF kk_2.7_rb1.38
+*Display glitches should hopefully be gone
+
+v1.0.4 on May 10, 2014:
+*[Didn't] Fix screen glitches
+
+v1.0.3 on May 10, 2014:
+*Ported HTC MDP gamma color enhancement feature
+*Added MDP gamma color enhancement calibration from HTC One M7
+*Improved screen colors (now colors are less saturated)
+*Backported MSM rotator from CAF kk_2.7
+
+v1.0.2 on May 4, 2014:
+*870MB of RAM
+*Fixed Bluetooth wakelocks
+*Added a hack to allow the kernel to boot on ROMs built using the official CM kernel (so this kernel will now boot on the official CM11 nightlies)
+
+v1.0.1 on April 24, 2014:
+*Added CPU voltage control
+*Added CPU overclock up to 1944MHz
+
+v1.0.0 on April 19, 2014:
+*Based off of official Samsung JB kernel source (very stable)
+*Backported video controller drivers from CAF kk_2.7_rb1.34
+*Backported GPU drivers from CAF kk_2.7_rb1.34
+*Imported framebuffer drivers from CM kernel (cm-11.0 branch)
+*Removed LOTS of excessive debugging and other garbage
+*3D GPU overclock up to 320MHz
+*Userspace has 852MB of RAM

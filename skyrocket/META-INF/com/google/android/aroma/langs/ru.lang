@@ -1,0 +1,216 @@
+﻿#   Language  : English
+#   By        : amarullz
+#
+
+#
+#--- COMMON SYSTEM STRING RESOURCE
+#
+text_ok=OK
+text_next=Далее >
+text_back=< Назад
+text_yes=Да
+text_no=Нет
+text_about=About
+text_calibrating=Калибровка
+text_quit=Покинуть установку
+text_quit_msg=Вы действительно хотите покинуть установку?
+
+#
+#-- CUSTOM STRING RESOURCE
+#
+common.for=for
+
+
+\
+Вы также можете использовать <b>форматирование</b> внутри языковых ресурсов.\
+\
+Спасибо за использование AROMA Installer
+
+#-- End of string without any backslash for multiline text
+
+
+themes.title=Выберите тему
+themes.desc=Пожалуйста выберите тему которую вы хотите использовать в этом установочном тесте:
+
+welcome.title=Добро пожаловать
+welcome.text1=Вы собираетесь установить
+welcome.text2=Перевод by mikrosmile
+welcome.version=Версия
+welcome.codename=КОДОВОЕ ИМЯ
+welcome.updated=ОБНОВЛЕНО
+welcome.next=Нажмите Далее для продолжения установки...
+welcome.device=Устройство
+welcome_ru.desc=Добро пожаловать
+
+terms.title=Условия использования 
+terms.desc=Пожалуйста внимательно прочитайте условия использования...
+terms.check=Я согласен с правилами использования...
+terms.confirm=Пожалуйста ознакомьтесь с соглашением...
+
+changelog.title=Изменения
+changelog.desc=Изменения в прошивке
+
+
+check.title=Готово для установки
+check.desc=Вся информация была собрана для установки. Нажмите Далее для продолжения установки
+check.check=Перезагрузить устройство после установки?
+
+install.title=Установка
+install.desc=Идет установка
+install.text=Дождитесь окончания установки
+complete.title=Установка завершена
+complete.text=Поздравляю...
+complete.text2=Установка
+complete.text3=завершена успешно
+complete.text4=Наслаждайтесь! :D
+
+
+
+wipe.title=Хотите выполнить полный сброс?
+wipe.desc=Пожалуйста выберите
+w_out_wiping.title=Установка без сброса
+full_wipe.title=Выполнить полный сброс
+update.title=Обновление
+
+
+device.title=Какая у Вас модель телефона?
+device.desc=Пожалуйста выберите
+
+mods.title=Дополнительные приложения
+mods.desc=Пожалуйста выберите что хотите установить
+
+remove.title=Удаление приложений
+remove.desc=Выберите что хотите удалить
+
+welcome_ru.desc=Добро пожаловать
+
+gps.title=Конфигурация GPS
+gps.desc=Пожалуйста выберите Ваш регион
+
+sweep.title=Хотите установить Sweep2wake?
+sweep.desc=Пожалуйста выберите
+
+zram.title=Хотите установить ZRAM?
+zram.desc=Пожалуйста выберите
+
+3dgpu.title=Разгон 3D ускорителя
+3dgpu.desc=Пожалуйста выберите
+
+3ddisable.title=Разгон 3D отключен
+3ddisable.desc=3D@266Mhz
+
+3dlow.title=Слабый разгон 3D
+3dlow.desc=3D@300Mhz
+
+3dhigh.title=Высокйи разгон 3D
+3dhigh.desc=3D@320Mhz
+
+
+
+2dgpu.title=Разгон 2D
+2dgpu.desc=Пожалуйста выберите
+
+2ddisable.title=Разгон 2D отключен
+2ddisable.desc=2D@200Mhz
+
+2dlow.title=Слабый разгон 2D
+2dlow.desc=2D@228Mhz
+
+2dhigh.title=Высокий разгон 2D
+2dhigh.desc=2D@266Mhz
+
+governor.title=Governor
+governor.desc=Пожалуйста выберите тип Регулировщика
+
+badass.title=Конфигурация Badass
+badass.desc=Какой режим Вы хотите?
+
+badass1.title=Производительность
+badass1.desc=Хотите больше чем это? Вернитесь и выберите ondemand
+
+badass2.title=Сбалансирован
+badass2.desc=Небольшое увеличение производительности 
+
+badass3.title=Эффективен для баттареи
+badass3.desc=Badass по умолчанию
+
+
+io.desc=Планировщик ввода-вывода
+
+
+maxfreq.title=Максимальная частота процессора
+maxfreq.desc=Выберите максимальную частоту процессора
+
+minfreq.title=Минимальная частота процессора
+minfreq.desc=Выберите минимальную частоту процессора
+
+scroff.title=Экран выключен
+scroff.desc=Выберите максимальную частоту при выключенном экране
+
+
+zram_yes.title=Да
+zram_no.title=Нет
+
+
+1566.desc=По умолчанию
+1782.desc=Осторожно!                
+1836.desc=Осторожно!    
+1890.desc=Осторожно!
+1944.desc=Осторожно!
+
+192.desc=По умолчанию
+
+486.desc=По умолчанию
+
+193.desc=Осторожно!
+
+
+tmo.desc=Только для U.S T-Mobile 
+exchange.desc=Отключает примение политик Exchange 
+
+asia.title=Азия
+asia.desc=GPS Настройки для Азии
+
+australia.title=Австралия
+australia.desc=GPS настройки для Австралии                                  		
+
+europe.title=Европа
+europe.desc=GPS настройки для Европы                      						
+
+North_America.title=Северная Америка
+america.desc=GPS настройки для Северной Америки 
+                         
+
+Oceania.title=Океания
+Oceania.desc=GPS настройки для Океании                                     			
+
+South_Africa.title=Южная Африка
+South_Africa.desc=GPS настройки для Южной Африки 
+
+South_America.title=Южная Америка
+South_America.desc=GPS настройки для Южной Америки 
+
+
+3ddis.title=Рзагон 3D отключен
+3dlow.title=Слабый 3D разгон
+3dhigh.title=Высокйи разгон 3D
+
+2ddis.title=Разгон 2D отключен
+2dlow.title=Слабый 2D разгон
+2dhigh.title=Высокйи разгон 2D
+
+badassdef.desc=По умолчанию. Сбалансированно
+ond.desc=Производительность по требованию
+
+performance.desc=Постоянно на максимальной частоте
+
+bdassperf.desc=Если хотите этот режим, выберите лучше ondemand
+bdassblncd.desc=Небольшое увеличение производительности
+bdassbatt.desc=По умолчанию. (может быть не стабильно)
+
+cfq.desc=По умолчанию
+
+model.title=Выбор модели телефона
+
+reboot.title=Перезагрузка
+reboot.text=Уверены что хотите перезагрузить устройство?

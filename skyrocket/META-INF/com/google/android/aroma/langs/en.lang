@@ -1,0 +1,227 @@
+﻿### LICENSE:
+#
+# Copyright (C) 2011 Ahmad Amarullah ( http://amarullz.com/ )
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+### LANGUAGE STRING RESOURCE FILE
+#
+#   Language  : English
+#   By        : amarullz
+#
+
+#
+#--- COMMON SYSTEM STRING RESOURCE
+#
+text_ok=OK
+text_next=Next >
+text_back=< Back
+text_yes=Yes
+text_no=No
+text_about=About
+text_calibrating=Calibrating Tools
+text_quit=Quit Installation
+text_quit_msg=Are you sure to quit the installer?
+
+#
+#-- CUSTOM STRING RESOURCE
+#
+common.for=for
+
+langtest.title=Language Test
+langtest.multiline=This text is located in langs/en.lang\
+Use backslash before enter to add new line\
+\
+You can also do <b>Formatting</b> inside the language string resource.\
+\
+Thanks for using AROMA Installer
+
+#-- End of string without any backslash for multiline text
+
+
+themes.title=Select Theme
+themes.desc=Please select installer language that you want to use:
+
+welcome.title=Welcome
+welcome.text1=You are about to Installing
+welcome.text2=
+welcome.version=Version
+welcome.codename=CODENAME
+welcome.updated=UPDATED
+welcome.next=Press Next to Continue the Installation...
+welcome.device=Device
+
+terms.title=Terms and Conditions
+terms.desc=Please read the Terms of Use ...
+terms.check=I Agree with this Terms and Conditions...
+terms.confirm=Please check the agreement...
+
+changelog.title=Changelog
+changelog.desc=ROM Changelog
+
+
+
+terms.title=Terms Of Use
+terms.desc=Please read the Terms of Use ...
+terms.check=I agree with this Terms Of Use...
+terms.confirm=Please check the agreement...
+
+
+
+check.title=Ready To Install
+check.desc=All informations has been collected for installation.
+check.check=Reboot the device after installation.
+Click Next To Start Installation...
+install.title=Installing
+install.desc=Installing
+install.text=Please wait until it's finished...
+complete.title=Installation Completed
+complete.text=Congratulation...
+complete.text2=Installation
+complete.text3=has been installed successfully.
+complete.text4=Enjoy! :D
+
+wipe.title=Do you want to perform a full wipe?
+wipe.desc=Please Select:
+w_out_wiping.title=Install w/out wiping
+full_wipe.title=Perform a full wipe
+update.title=Update only
+
+
+device.title=Which device model do you have?
+device.desc=Please Select:
+
+mods.title=Choose aditional mods
+mods.desc=Please check the ones you want
+
+remove.title=Remove Apps
+remove.desc=Check the ones you want to remove
+
+welcome_ru.desc=Добро пожаловать
+
+gps.title=Custom GPS Config
+gps.desc=Please choose your region:
+
+
+zram.title=Do you want ZRAM?
+zram.desc=Please Select:
+
+3dgpu.title=3DGPU Overclock (may not be stable)
+3dgpu.desc=Please Select:
+
+
+
+3dhigh.title=3DGPU high overclock
+3dhigh.desc=3D@320Mhz
+
+3ddis.title=3DGPU OC disabled
+3dlow.title=3DGPU low overclock
+
+
+
+2ddis.title=2DGPU OC disabled
+2dlow.title=2DGPU low overclock
+2dhigh.title=2DGPU high overclock
+
+
+2dgpu.title=2DGPU Overclock (may not be stable)
+2dgpu.desc=Please Select:
+
+
+
+2dlow.title=2DGPU low overclock
+2dlow.desc=2D@228Mhz
+
+2dhigh.title=2DGPU high overclock
+2dhigh.desc=2D@266Mhz
+
+governor.title=Governor
+governor.desc=default governor:
+
+badass.title=Badass configuration:
+badass.desc=What is your focus?
+
+
+io.desc=default i/o scheduler:
+
+
+maxfreq.title=Maxfreq
+maxfreq.desc=Please Select your maxfreq:
+
+minfreq.title=Minfreq
+minfreq.desc=Please Select your minfreq:
+
+scroff.title=Screen off
+scroff.desc=Please Select your screen off max freq:
+
+
+zram_yes.title=Yes
+zram_no.title=No
+
+
+1566.desc=default
+1782.desc=Be careful !                
+1836.desc=Be careful !    
+1890.desc=Be careful !
+1944.desc=Be careful !
+
+192.desc=default
+
+486.desc=default
+
+193.desc=Be careful !
+
+
+tmo.desc=Only for U.S. T-Mobile provider
+exchange.desc=Disable the admin rights requirment in exchange mail
+
+asia.title=Asia
+asia.desc=Asia specific GPS configuration
+
+australia.title=Australia
+australia.desc=Australia specific GPS configuration                          		
+
+europe.title=Europe
+europe.desc=Europe specific GPS configuration                  						
+
+North_America.title=North America
+america.desc=America specific GPS configuration
+
+
+Oceania.title=Oceania
+Oceania.desc=Oceania specific GPS configuration                             			
+
+South_Africa.title=South Africa
+South_Africa.desc=South Africa specific GPS configuration
+
+South_America.title=South America
+South_America.desc=South America specific GPS configuration
+
+
+bdassperf.desc=you want more than this? go back and choose ondemand
+bdassblncd.desc=with a slight weight on performance
+bdassbatt.desc=badass @ default (may be choppy)
+
+badassdef.desc=default, balanced+gpu control
+ond.desc=performance on demand
+performance.desc=always clock with max frequency
+
+welcome.text2=Translate by mikrosmile
+
+
+cfq.desc=default
+
+model.title=Which device model do you have?
+
+reboot.title=Reboot 
+reboot.text=Are you sure you want to reboot?

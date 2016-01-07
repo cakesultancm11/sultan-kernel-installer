@@ -1,0 +1,9 @@
+<@center><b><#selectbg_g>Before flashing this ROM, make a backup please!</#></b></@>
+<@center><b><#selectbg_g>I'm not responsible for messed up system.</#></b></@>
+
+<@center><b><#selectbg_g>SHARING POLICY</#></b></@>
+
+<@fill>We know that we got some stuff here - and more will follow - which others dont got. Why? Because we spent LOTS of time to achieve what we've achieved.
+You are not allowed, if you are a dev, themer or whatever to take stuff of our rom and use it in your theme/rom WITHOUT asking for permission first.
+
+Please respect our few rules to honor our time we spent to this.</@>

@@ -1,0 +1,50 @@
+ui_print("Cake kernel Aroma Installer");
+ui_print("Aroma installer originally created by iba21 & axetilen!");
+ui_print("Aroma installer modified and maintained by Sultanxda");
+ui_print("");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p24", "/system");
+assert(is_mounted("/system"));
+ui_print("Extracting kernel files...");
+set_progress(0.2);
+delete_recursive("/system/lib/modules");
+package_extract_dir("system", "/system");
+ui_print("Installing Cake kernel...");
+set_progress(0.3);
+package_extract_file("boot.img", "/dev/block/mmcblk0p8");
+
+# Mods
+ui_print("Applying selected options...");
+ui_print("");
+set_progress(0.5);
+package_extract_dir("figa", "/tmp");
+set_perm(0, 0, 0777, "/tmp/delete.sh");
+set_perm(0, 0, 0777, "/tmp/modify.sh");
+delete("/system/etc/init.d/89z_kernel");
+set_progress(0.6);
+
+if
+    file_getprop("/tmp/aroma-data/kernel.prop","selected.0") == "1"
+then
+	ui_print("> Cleaning files...");
+	run_program("/tmp/delete.sh");
+	run_program("/sbin/sleep", "1");
+	ui_print("> Copying mods...");
+	set_progress(0.7);
+	run_program("/tmp/modify.sh");
+	run_program("/sbin/sleep", "2");
+	set_progress(0.9);
+endif;
+
+if
+    file_getprop("/tmp/aroma-data/kernel.prop","selected.0") == "2"
+then
+	ui_print("> Erasing old kernel configuration...");
+	set_progress(0.7);
+	run_program("/tmp/delete.sh");
+	run_program("/sbin/sleep", "2");
+	set_progress(0.9);
+endif;
+
+set_progress(1.000000);
+unmount("/system");
+ui_print("Finished.");
