@@ -98,6 +98,17 @@ selectbox(
   "Disabled"," ",0
 );
 
+
+selectbox(
+  "Enable Pocket Detection?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "pktda.prop",
+
+  "Yes","Breaks Wake Controls when it's dark",1,
+  "No"," ",0
+);
+
 selectbox(
   "Enable Fsync?",
   "Press next if you are unsure",
@@ -212,6 +223,16 @@ selectbox(
   "400mV UV","Display voltage: 2600mV",0,
   "450mV UV","Display voltage: 2550mV",0,
   "500mV UV","Display voltage: 2500mV",1
+);
+
+selectbox(
+  "Enable Cooler Screen Colors?",
+  "Press next if you are unsure",
+  "icons/apps",
+  "mdp.prop",
+
+  "Yes"," ",1,
+  "No"," ",0
 );
 
 selectbox(

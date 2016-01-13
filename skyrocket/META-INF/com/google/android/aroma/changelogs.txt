@@ -1,3 +1,7 @@
+v2.1 on Jan 13 2016
+*Allow turning off Cooler Colors
+*Added Pocket Detection
+
 v2.0a on Jan 5, 2016
 *Undervolt Panel by Default
 *Dim Backlight by Default

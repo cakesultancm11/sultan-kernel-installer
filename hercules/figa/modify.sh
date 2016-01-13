@@ -99,6 +99,16 @@ case $val in
     ;;
 esac
 
+val=`cat /tmp/aroma-data/pktda.prop | cut -d"=" -f2`
+case $val in
+  1)
+    pktda=1
+    ;;
+  2)
+    pktda=0
+    ;;
+esac
+
 val=`cat /tmp/aroma-data/fsync.prop | cut -d"=" -f2`
 case $val in
   1)
@@ -258,6 +268,16 @@ case $val in
     ;;
 esac
 
+val=`cat /tmp/aroma-data/mdp.prop | cut -d"=" -f2`
+case $val in
+  1)
+    mdp=1
+    ;;
+  2)
+    mdp=0
+    ;;
+esac
+
 val=`cat /tmp/aroma-data/thermal.prop | cut -d"=" -f2`
 case $val in
   1)
@@ -316,13 +336,18 @@ echo '# 5 = Super Relaxed thresholds (CPU throttled very rarely)' >> /system/etc
 echo 'THERMAL='$thermal';' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
-echo '## Display undervolt' >> /system/etc/init.d/89z_kernel;
+echo '## Display Features' >> /system/etc/init.d/89z_kernel;
+echo '## Display Undervolt' >> /system/etc/init.d/89z_kernel;
 echo '# Choose a value between' >> /system/etc/init.d/89z_kernel;
 echo '# 0mV and 500mV that is a' >> /system/etc/init.d/89z_kernel;
 echo '# multiple of 25.' >> /system/etc/init.d/89z_kernel;
 echo '# Undervolt will be' >> /system/etc/init.d/89z_kernel;
 echo '# 3000mV -MINUS- (what you choose)' >> /system/etc/init.d/89z_kernel;
+echo '## MDP Cooler Gamma' >> /system/etc/init.d/89z_kernel;
+echo '# 0 = Disabled' >> /system/etc/init.d/89z_kernel;
+echo '# 1 = Enabled' >> /system/etc/init.d/89z_kernel;
 echo 'PANEL_UV='$panel';' >> /system/etc/init.d/89z_kernel;
+echo 'MDP='$mdp';' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
 echo '## Maximum GPU frequency (3D)' >> /system/etc/init.d/89z_kernel;
@@ -365,11 +390,15 @@ echo '# 1 = Menu Button' >> /system/etc/init.d/89z_kernel;
 echo '# 2 = Home Button' >> /system/etc/init.d/89z_kernel;
 echo '# 3 = Back Button' >> /system/etc/init.d/89z_kernel;
 echo '# 4 = Search Button' >> /system/etc/init.d/89z_kernel;
+echo '## Pocket Detection' >> /system/etc/init.d/89z_kernel;
+echo '# 0 = Disabled' >> /system/etc/init.d/89z_kernel;
+echo '# 1 = Enabled' >> /system/etc/init.d/89z_kernel;
 echo 'S2W='$s2w';' >> /system/etc/init.d/89z_kernel;
 echo 'S2S='$s2s';' >> /system/etc/init.d/89z_kernel;
 echo 'LENIENT='$lenient';' >> /system/etc/init.d/89z_kernel;
 echo 'DT2W='$dt2w';' >> /system/etc/init.d/89z_kernel;
 echo 'DT2S='$dt2s';' >> /system/etc/init.d/89z_kernel;
+echo 'PKTDA='$pktda';' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
 echo '## Misc Controls' >> /system/etc/init.d/89z_kernel;
@@ -468,11 +497,13 @@ echo '    chmod 664 /sys/android_touch/sweep2sleep' >> /system/etc/init.d/89z_ke
 echo '    chmod 664 /sys/android_touch/sweep2wake_lenient' >> /system/etc/init.d/89z_kernel;
 echo '    chmod 664 /sys/android_touch/doubletap2wake' >> /system/etc/init.d/89z_kernel;
 echo '    chmod 664 /sys/android_touch/doubletap2sleep' >> /system/etc/init.d/89z_kernel;
+echo '    chmod 664 /sys/android_touch/pocket_detect' >> /system/etc/init.d/89z_kernel;
 echo '    echo "$S2W" > /sys/android_touch/sweep2wake' >> /system/etc/init.d/89z_kernel;
 echo '    echo "$S2S" > /sys/android_touch/sweep2sleep' >> /system/etc/init.d/89z_kernel;
 echo '    echo "$LENIENT" > /sys/android_touch/sweep2wake_lenient' >> /system/etc/init.d/89z_kernel;
 echo '    echo "$DT2W" > /sys/android_touch/doubletap2wake' >> /system/etc/init.d/89z_kernel;
 echo '    echo "$DT2S" > /sys/android_touch/doubletap2sleep' >> /system/etc/init.d/89z_kernel;
+echo '    echo "$PKTDA" > /sys/android_touch/pocket_detect' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
 echo '# Misc Controls' >> /system/etc/init.d/89z_kernel;
@@ -486,8 +517,9 @@ echo '    echo "$GFS" > /sys/kernel/sched/gentle_fair_sleepers' >> /system/etc/i
 echo '    echo "$AP" > /sys/kernel/sched/arch_power' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
-echo '# Display undervolt' >> /system/etc/init.d/89z_kernel;
+echo '# Display Features' >> /system/etc/init.d/89z_kernel;
 echo '	echo "$PANEL_UV" > /sys/module/board_msm8x60_celox/parameters/panel_uv' >> /system/etc/init.d/89z_kernel;
+echo '	echo "$MDP" > /sys/module/mdp/parameters/mdp_gamma_cooler_colors' >> /system/etc/init.d/89z_kernel;
 echo ' ' >> /system/etc/init.d/89z_kernel;
 
 echo '# CPU Frequency' >> /system/etc/init.d/89z_kernel;
